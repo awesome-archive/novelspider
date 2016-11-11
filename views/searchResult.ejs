@@ -1,0 +1,21 @@
+<% include header %>
+	<div class="container">
+		<hgroup>
+			<h1>搜索‘<span><%= search %></span>’结果</h1>
+		</hgroup>
+		
+	</div>
+	<% if(isExist) { %>
+			<div class="error"><%- content %></div>
+		<% }else{ %>
+			<dl class="searchResult">
+				<% for(var i=0;i< content.length;i++){ %>
+					<dd>
+						<h3 class="name"><a href="/?bookId=<%= content[i].thisUrl %>"><%- content[i].thisTit %></a></h3>
+						<div class="detail"><%- content[i].thisDetail %></div>
+						<a href="/?bookId=<%= content[i].thisUrl %>" class="link"></a>
+					</dd>
+				<% } %>
+			</dl>
+		<% } %>
+<% include footer %>

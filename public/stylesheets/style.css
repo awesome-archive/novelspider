@@ -1,0 +1,271 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    border: 0
+}
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+*, *:after, *:before {
+    box-sizing: border-box
+}
+html{-webkit-overflow-scrolling: touch}
+body {
+    font-family: Helvetica, STHeiti STXihei, Microsoft JhengHei, Microsoft YaHei, Arial;
+    font-size: .14rem;
+    line-height: 1.5;
+    overflow-x: hidden;
+    color: #FFF;
+    background-color: #42454e;
+    -webkit-text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch
+}
+::-webkit-input-placeholder {
+    color: #42454e;
+    text-align: center;
+}
+::-moz-placeholder {
+    color: #42454e;
+    text-align: center;
+}
+:-ms-input-placeholder {
+    color: #42454e;
+    text-align: center;
+}
+::placeholder {
+    color: #42454e;
+    text-align: center;
+}
+input,button{
+    display: block;
+    margin-bottom: 0.3rem;
+    width: 100%;
+    padding: 0.15rem;
+    border-radius: 0.06rem;
+    border: none;
+    -webkit-appearance: none;
+    text-align: center;
+}
+
+.container {
+    padding: .15rem;
+    -webkit-overflow-scrolling: touch
+}
+hgroup {
+    font-size: .3rem;
+    font-weight: bold;
+    margin-bottom: .3rem;
+    text-align: center
+}
+hgroup p {
+    font-size: .2rem;
+    font-weight: normal
+}
+hgroup span{
+    padding: 0 0.05rem;
+    color: #FD5353;
+}
+hgroup small {
+    font-size: .2rem;
+    font-weight: normal;
+    display: block
+}
+hgroup .chapterTitle{
+    font-size: .24rem;
+}
+
+.error {
+    font-size: 0.17rem;
+    text-align: center
+}
+.error span {
+    color: #fd5353
+}
+.content dl{font-size: 0;}
+.content dt{
+    display: block;
+    margin: 0.15rem 0;
+    width: 100%;
+    padding: 0.075rem 0;
+    text-align: center;
+    font-size: 0.14rem;
+    color: #fff;
+    background-color: #1bba9a;
+    border-radius: .06rem;
+}
+.content dd{
+    display: inline-block;
+    width: 50%;
+    height: 0.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.13rem;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.nav {
+    display: -webkit-box;
+    display: flex;
+    padding: .15rem 0
+}
+.nav a {
+    display: block;
+    width: 50%;
+    text-align: center
+}
+
+
+.search {
+    text-align: center;
+    border-radius: 0.05rem;
+    font-size: 0.13rem
+}
+
+.search button {
+    background-color: #1bba9a;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+.searchResult {
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+}
+.searchResult dd {
+    position: relative;
+    padding: .15rem;
+    width: 49%;
+    margin-bottom: 1%;
+    background-color: #fff;
+}
+.searchResult dd:nth-child(2n){
+    margin-right: 0;
+}
+.searchResult h3 a {
+    font-size: 0.15rem;
+    font-weight: bold;
+    color: #333
+}
+.searchResult span {
+    color: #FD5353
+}
+.searchResult .preBold {
+    font-weight: bold;
+    color: #333
+}
+.searchResult p a{
+    color: #fd5353
+}
+.searchResult .link{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.history{
+    padding: 0.15rem 0;
+    color: #999;
+}
+.history h3{
+    position: relative;
+    font-size: 0.15rem;
+    text-align: center;
+}
+.history h3:after{
+    display: block;
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    height: 1px;
+    background-color: #999;
+    margin-top: -1px;
+}
+.history h3 span{
+    position: relative;
+    padding: 0 0.075rem;
+    background-color: #42454e;
+    z-index: 999;
+}
+.history section{
+    color: #FFF;
+    text-align: center;
+    padding: 0.15rem 0;
+}
+.history a{
+    padding: 0.075rem 0.15rem;
+    color: #999;
+}
+.history .clear{
+    display: block;
+    text-align: center;
+    font-size: 0.12rem;
+}
+@media screen and (max-width:319px) {
+    html {
+        font-size: 85.33333px
+    }
+}
+@media screen and (min-width:320px) and (max-width:359px) {
+    html {
+        font-size: 85.33333px
+    }
+}
+@media screen and (min-width:360px) and (max-width:374px) {
+    html {
+        font-size: 96px
+    }
+}
+@media screen and (min-width:375px) and (max-width:383px) {
+    html {
+        font-size: 100px
+    }
+}
+@media screen and (min-width:384px) and (max-width:399px) {
+    html {
+        font-size: 102.4px
+    }
+}
+@media screen and (min-width:400px) and (max-width:413px) {
+    html {
+        font-size: 106.66667px
+    }
+}
+@media screen and (min-width:414px) and (max-width:767px) {
+    html {
+        font-size: 110.4px
+    }
+}
+@media screen and (min-width:768px) {
+    html {
+        font-size: 120px
+    }
+    .searchResult dd{
+        width: 24%;
+    }
+}
+@media screen and (min-width:992px) {
+    html {
+        font-size: 120px
+    }
+    .searchResult dd{
+        width: 19.5%;
+    }
+}

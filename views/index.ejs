@@ -1,0 +1,18 @@
+<% include header %>
+	<div class="container">
+		<hgroup>
+			<h1><%= title %></h1>
+			<p><%= author %></p>
+		</hgroup>
+		<div class="content" data-id="<%= bookId %>"><%- content %></div>
+	</div>
+	<script>
+		$(function(){
+			$('.content').find('a').each(function(index, el) {
+				var thisUrl=$(this).attr('href').match(/\d{7,12}/);
+				var thisId=$('.content').attr('data-id');
+				$(this).attr('href', '/chapter?bookId='+thisId+'&index='+thisUrl);
+			});
+		})
+	</script>
+<% include footer %>
