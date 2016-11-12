@@ -257,7 +257,7 @@ a{
     html {
         font-size: 120px
     }
-    .searchResult dd{
+    .searchResult dd,.content dd{
         width: 24%;
     }
 }
@@ -265,7 +265,7 @@ a{
     html {
         font-size: 120px
     }
-    .searchResult dd{
+    .searchResult dd,.content dd{
         width: 19.5%;
     }
 }
