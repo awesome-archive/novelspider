@@ -65,14 +65,6 @@ router.get('/', function(req, res, next) {
             var title = $('h1').html();
             var author = $('h1').next('p').html().replace(/&nbsp;*/g, '');
             var content = $('#list').html();
-            // $('#list a').each(function(index) {
-            //     var chapter = $(this).html();
-            //     var chapter_url = $(this).attr('href').match(/\d{7,12}/);
-            //     items.push({
-            //         chapter: chapter,
-            //         chapter_url: chapter_url
-            //     })
-            // });
             res.render('index', {
                 title: title,
                 author: author,
@@ -99,7 +91,6 @@ router.get('/chapter', function(req, res, next) {
                 var content = $('#content').html().replace(/&nbsp;*/g, '').replace(/\/wｗW。ｑΒ⑸.CoM\\\\/g, '').replace(/<script(?:\s+[^>]*)?>(.*?)<\/script\s*>/ig, '');
                 var prev = $('.bottem1 a').eq(0).attr('href').split('.')[0];
                 var next = $('.bottem1 a').eq(2).attr('href').split('.')[0];
-                var category = domain + bookId;
                 res.render('chapter', {
                     title: title,
                     content: content,
@@ -107,7 +98,6 @@ router.get('/chapter', function(req, res, next) {
                     index: index,
                     prev: prev,
                     next: next,
-                    category: category
                 });
             }
         });

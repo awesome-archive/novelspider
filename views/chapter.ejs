@@ -5,12 +5,12 @@
 		</hgroup>
 		<div class="nav">
 			<% if(!prev){ %>
-				<a href="<%= category %>">上一章</a>
+				<a href="/?bookId=<%= bookId %>">上一章</a>
 			<% }else{ %>
 				<a href="/chapter?bookId=<%= bookId %>&index=<%= prev %>">上一章</a>
 			<% } %>
 			<% if(!next){%>
-				<a href="<%= category %>">目录</a>
+				<a href="/?bookId=<%= bookId %>">目录</a>
 			<% }else{ %>
 				<a href="/chapter?bookId=<%= bookId %>&index=<%= next %>">下一章</a>
 			<% } %>
@@ -18,12 +18,12 @@
 		<div class="content"><%- content %></div>
 		<div class="nav">
 			<% if(!prev){ %>
-				<a href="<%= category %>">上一章</a>
+				<a href="/?bookId=<%= bookId %>">上一章</a>
 			<% }else{ %>
 				<a href="/chapter?bookId=<%= bookId %>&index=<%= prev %>">上一章</a>
 			<% } %>
 			<% if(!next){%>
-				<a href="<%= category %>">目录</a>
+				<a href="/?bookId=<%= bookId %>">目录</a>
 			<% }else{ %>
 				<a href="/chapter?bookId=<%= bookId %>&index=<%= next %>">下一章</a>
 			<% } %>
