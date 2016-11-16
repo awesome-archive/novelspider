@@ -14,11 +14,12 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(__dirname + '/public'));
 
+app.use('',index)
 app.use('/index', index);
 app.use('/chapter', chapter);
 app.use('/category', category);
 app.use('/searchResult', searchResult);
 
-app.listen(8089, function() {
+app.listen(3000, function() {
 	console.log('listening 8089')
 })
