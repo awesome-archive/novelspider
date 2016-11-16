@@ -20,6 +20,6 @@ app.use('/chapter', chapter);
 app.use('/category', category);
 app.use('/searchResult', searchResult);
 
-app.listen(3000, function() {
+app.listen(8089, function() {
 	console.log('listening 8089')
 })
