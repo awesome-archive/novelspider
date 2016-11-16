@@ -218,6 +218,16 @@ a{
     text-align: center;
     font-size: 0.12rem;
 }
+.goHome{
+    display: block;
+    position: fixed;
+    width: 0.36rem;
+    height: 0.36rem;
+    right: 0.15rem;
+    bottom: 0.15rem;
+    background: url(../images/home.png) no-repeat;
+    background-size: cover;
+}
 @media screen and (max-width:319px) {
     html {
         font-size: 85.33333px

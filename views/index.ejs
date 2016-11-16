@@ -1,18 +1,47 @@
 <% include header %>
 	<div class="container">
 		<hgroup>
-			<h1><%= title %></h1>
-			<p><%= author %></p>
+			<h1>拒绝广告-搜小说</h1>
 		</hgroup>
-		<div class="content" data-id="<%= bookId %>"><%- content %></div>
+		<section>
+			<form action="/searchResult" method="get" class="search">
+		        <input type="search" name="search" placeholder="What are you looking for?" class="forminput">
+		        <button type="submit">Search</button>
+		    </form>
+		    <div class="history">
+		    	<h3><span>搜索记录</span></h3>
+		    	<section id="historyList"></section>
+		    	<a href="javascript:;" class="clear">清除搜索记录</a>
+		    </div>
+		</section>
 	</div>
 	<script>
 		$(function(){
-			$('.content').find('a').each(function(index, el) {
-				var thisUrl=$(this).attr('href').match(/\d{7,12}/);
-				var thisId=$('.content').attr('data-id');
-				$(this).attr('href', '/chapter?bookId='+thisId+'&index='+thisUrl);
+			var _html='';
+			var history=localStorage;
+			if (localStorage) {
+				for(var i=0;i<history.length;i++){
+					var keys=history.key(i);
+					if(keys==history.getItem(keys)){
+						_html+='<a href="/searchResult?search='+keys+'" style="color:'+getRandomColor()+'">'+keys+'</a>';
+					}
+				}
+				$(_html).appendTo('#historyList');
+			}else{
+				$('#historyList').html('暂无搜索记录');
+			}
+			$('button').on('click',function(event) {
+				var inputVal=$('.forminput').val();
+				localStorage.setItem(inputVal,inputVal);
 			});
-		})
+			$('.clear').on('click',function(event) {
+				event.preventDefault();
+				$('#historyList').html('');
+				localStorage.clear();
+			});
+		});
+		function getRandomColor(){
+			return "#"+("00000"+((Math.random()*16777215+0.5)>>0).toString(16)).slice(-6);
+		} 
 	</script>
 <% include footer %>
