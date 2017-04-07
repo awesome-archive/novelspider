@@ -1,32 +1,12 @@
 <% include header %>
-	<div class="container">
-		<hgroup>
-			<h1 class="chapterTitle"><%= title %></h1>
-		</hgroup>
-		<div class="nav">
-			<% if(!prev){ %>
-				<a href="/category?bookId=<%= bookId %>">上一章</a>
-			<% }else{ %>
-				<a href="/chapter?bookId=<%= bookId %>&index=<%= prev %>">上一章</a>
-			<% } %>
-			<% if(!next){%>
-				<a href="/category?bookId=<%= bookId %>">目录</a>
-			<% }else{ %>
-				<a href="/chapter?bookId=<%= bookId %>&index=<%= next %>">下一章</a>
-			<% } %>
-		</div>
-		<div class="content"><%- content %></div>
-		<div class="nav">
-			<% if(!prev){ %>
-				<a href="/category?bookId=<%= bookId %>">上一章</a>
-			<% }else{ %>
-				<a href="/chapter?bookId=<%= bookId %>&index=<%= prev %>">上一章</a>
-			<% } %>
-			<% if(!next){%>
-				<a href="/category?bookId=<%= bookId %>">目录</a>
-			<% }else{ %>
-				<a href="/chapter?bookId=<%= bookId %>&index=<%= next %>">下一章</a>
-			<% } %>
-		</div>
-	</div>
+<style>@font-face{font-family:"iconfont";src:url('../font/iconfont.eot?t=1482220897987');src:url('../font/iconfont.woff?t=1482220897987') format('woff'), /* chrome, firefox */
+    url('../font/iconfont.ttf?t=1482220897987') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg?t=1482220897987#iconfont') format('svg')}.iconfont{font-family:"iconfont" !important;font-size:.15rem;font-style:normal;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.icon-shezhi:before{content:"\e600"}.icon-mulu:before{content:"\e694"}.icon-home:before{content:"\e66f"}.icon-fenlei:before{content:"\e60f"}.icon-paixing:before{content:"\e627"}</style>
+<div class="container">
+    <div class="header">
+        <h2><%- chapters %></h2>
+    </div>
+    <div class="content"><%- content %></div>
+    <div class="chapter"> </div>
+</div>
 <% include footer %>

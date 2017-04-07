@@ -3,18 +3,17 @@ const router = express.Router();
 const superagent = require('superagent');
 
 router.get('/', function (req, res, next) {
-    const getUrl = encodeURI('http://api.zhuishushenqi.com/book/fuzzy-search?query=' + req.query.search);
-    superagent.get(getUrl).end(function (err, response) {
+    superagent.get('http://api.zhuishushenqi.com/toc?view=summary&book=' + req.query.id).end(function (err, response) {
         if (err) {
             res.send('Ops!找不到页面！')
         } else {
-            res.render('searchResult', {
+            res.render('sources', {
+                title:req.query.name,
                 isShowNav:true,
                 isShowCategory:false,
-                title: req.query.search,
-                content: JSON.parse(response.text),
-                search: req.query.search
-            })
+                author: req.query.author,
+                content: JSON.parse(response.text)
+            });
         }
     })
 });

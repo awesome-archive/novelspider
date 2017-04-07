@@ -1,18 +1,33 @@
 <% include header %>
-	<div class="container">
-		<hgroup>
-			<h1><%= title %></h1>
-			<p><%= author %></p>
-		</hgroup>
-		<div class="content" data-id="<%= bookId %>"><%- content %></div>
-	</div>
-	<script>
-		$(function(){
-			$('.content').find('a').each(function(index, el) {
-				var thisUrl=$(this).attr('href').match(/\d{7,12}/);
-				var thisId=$('.content').attr('data-id');
-				$(this).attr('href', '/chapter?bookId='+thisId+'&index='+thisUrl);
-			});
-		})
-	</script>
+<div class="container">
+    <div class="header">
+        <h2><%- title %><small><%- author %></small></h2>
+    </div>
+    <ul class="category">
+        <% for(var i = content.length - 1;i >= 0;i--){ %>
+        <li>
+            <a href="/chapter?url=<%- content[i].link %>&sourceId=<%- sourceId %>&chapters=<%- content[i].title %>"><%- content[i].title %></a>
+        </li>
+        <% } %>
+    </ul>
+</div>
+<a href="javascript:;" class="goTop"></a>
+<a href="javascript:;" class="goBottom"></a>
+<script>
+    $(function(){
+        $('.goTop').on('click',function(){
+            $('html,body').animate({
+                scrollTop:0
+            },300)
+        });
+        $('.goBottom').on('click',function(){
+            var winH=$(window).height();
+            var conH=$('.container').height();
+            console.log(winH,conH)
+            $('html,body').animate({
+                scrollTop:conH-winH
+            },300)
+        })
+    })
+</script>
 <% include footer %>
