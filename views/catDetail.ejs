@@ -8,7 +8,7 @@
                 <% if (!content.books[i].cover.match('http')){ %>
                 <img src="http://statics.zhuishushenqi.com<%- content.books[i].cover %>-coverl">
                 <% }else{ %>
-                <img src="<%- content.books[i].cover.replace('/agent/', '') %>">
+                <img src="<%- decodeURIComponent(content.books[i].cover.replace('/agent/', '')) %>">
                 <% } %>
                 <% }else{ %>
                 <img src="../images/error.png">

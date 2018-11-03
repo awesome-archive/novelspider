@@ -5,7 +5,7 @@
         <li>
             <div class="novelPic">
                 <% if (content.books[i].cover){ %>
-                <img src="<%- content.books[i].cover.replace('/agent/', '') %>">
+                <img src="<%- decodeURIComponent(content.books[i].cover.replace('/agent/', '')) %>">
                 <% }else{ %>
                 <img src="../images/error.png">
                 <% } %>
